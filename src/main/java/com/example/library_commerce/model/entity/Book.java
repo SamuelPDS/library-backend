@@ -20,16 +20,19 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String gender;
+    private String genre;
     @Column
     private String price;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "author", referencedColumnName = "name")
     private Author author;
     @Column
     private Date release_date;
 
-    public Book(BookDTO bookDTO) {
-
+    public Book(BookDTO bookDTO, Author author) {
+        this.genre = bookDTO.getGenre();
+        this.price = bookDTO.getPrice();
+        this.author = author;
     }
 }
 

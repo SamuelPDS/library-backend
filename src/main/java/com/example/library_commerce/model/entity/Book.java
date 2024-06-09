@@ -20,9 +20,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
+    private String title;
+    @Column
     private String genre;
     @Column
-    private String price;
+    private double price;
     @ManyToOne
     @JoinColumn(name = "author", referencedColumnName = "name")
     private Author author;
@@ -30,6 +32,7 @@ public class Book {
     private Date release_date;
 
     public Book(BookDTO bookDTO, Author author) {
+        this.title = bookDTO.getTitle();
         this.genre = bookDTO.getGenre();
         this.price = bookDTO.getPrice();
         this.author = author;

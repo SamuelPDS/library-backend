@@ -11,15 +11,16 @@ import java.util.Date;
 @Getter
 @Setter
 public class BookDTO {
-    private Long id;
+    private String title;
     private String genre;
-    private String price;
+    private double price;
     private String author;
     private Date release_date;
 
 
     public BookDTO(Book book) {
-        genre = book.getGenre();
+        this.title = book.getTitle();
+        this.genre = book.getGenre();
         this.price = book.getPrice();
         this.author = book.getAuthor().getName();
         this.release_date = book.getRelease_date();

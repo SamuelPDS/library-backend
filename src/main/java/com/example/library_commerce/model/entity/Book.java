@@ -31,7 +31,7 @@ public class Book {
     @Column
     private Date release_date;
 
-    public Book(BookDTO bookDTO, Author author) {
+    public Book(BookDTO bookDTO) {
         this.title = bookDTO.getTitle();
         this.genre = bookDTO.getGenre();
         this.price = bookDTO.getPrice();

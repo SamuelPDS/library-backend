@@ -1,5 +1,6 @@
 package com.example.library_commerce.model.dto;
 
+import com.example.library_commerce.model.entity.Author;
 import com.example.library_commerce.model.entity.Book;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,15 +15,14 @@ public class BookDTO {
     private String title;
     private String genre;
     private double price;
-    private String author;
     private Date release_date;
+    private AuthorDTO author;
 
 
     public BookDTO(Book book) {
         this.title = book.getTitle();
         this.genre = book.getGenre();
         this.price = book.getPrice();
-        this.author = book.getAuthor().getName();
         this.release_date = book.getRelease_date();
     }
 }

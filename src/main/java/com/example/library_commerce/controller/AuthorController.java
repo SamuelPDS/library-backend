@@ -17,9 +17,9 @@ public class AuthorController {
 
     @PostMapping
     public String create(@RequestBody AuthorDTO authorDTO){
-//        if (authorService == null) {
-//            return "Error";
-//        }
+        if (authorService == null) {
+            return "Error";
+        }
         this.authorService.createAuthor(authorDTO);
         return "Created";
     }

@@ -35,7 +35,7 @@ public class Book {
         this.title = bookDTO.getTitle();
         this.genre = bookDTO.getGenre();
         this.price = bookDTO.getPrice();
-        this.author = author;
+        this.author = new Author(bookDTO.getAuthor());
     }
 }
 

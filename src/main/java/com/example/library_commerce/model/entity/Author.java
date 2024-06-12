@@ -33,4 +33,8 @@ public class Author {
         this.bornData = authorDTO.getBornData();
     }
 
+//    public Author(Author author) {
+//        this.name = author.getName();
+//        this.bornData = author.getBornData();
+//    }
 }

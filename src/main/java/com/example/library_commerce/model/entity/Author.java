@@ -25,8 +25,8 @@ public class Author {
     private String name;
     @Column
     private Date bornData;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
-    private List<Book> books = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
+//    private List<Book> books = new ArrayList<>();
 
     public Author(AuthorDTO authorDTO) {
         this.name = authorDTO.getName();

@@ -9,6 +9,8 @@ import com.example.library_commerce.repository.BookRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class BookService {
@@ -17,5 +19,13 @@ private BookRepository repository;
     public void createBook(BookDTO bookDTO){
         var book = new Book(bookDTO);
         this.repository.save(book);
+    }
+
+    public List<Book> getAuthor(String author){
+        return this.repository.findByAuthor(author);
+    }
+
+    public List<Book> getGenre(String genre) {
+        return this.repository.findByGenre(genre);
     }
 }

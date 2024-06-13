@@ -16,7 +16,7 @@ public class BookDTO {
     private String genre;
     private double price;
     private Date release_date;
-    private AuthorDTO author;
+    private String author;
 
 
     public BookDTO(Book book) {
@@ -24,5 +24,6 @@ public class BookDTO {
         this.genre = book.getGenre();
         this.price = book.getPrice();
         this.release_date = book.getRelease_date();
+        this.author = book.getAuthor();
     }
 }

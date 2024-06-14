@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -38,5 +39,12 @@ public class BookController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         var booksByGenrer = bookService.getGenre(genre);
         return ResponseEntity.ok().body(booksByGenrer);
+    }
+
+    @GetMapping("release/{date}")
+    public ResponseEntity<List<Book>> getByReleaseDate(@PathVariable Date releaseDate) {
+        var booksByDate = bookService.getByDate(releaseDate);
+        if(booksByDate.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return ResponseEntity.ok().body(booksByDate);
     }
 }

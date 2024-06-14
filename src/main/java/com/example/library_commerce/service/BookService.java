@@ -9,6 +9,7 @@ import com.example.library_commerce.repository.BookRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -27,5 +28,9 @@ private BookRepository repository;
 
     public List<Book> getGenre(String genre) {
         return this.repository.findByGenre(genre);
+    }
+
+    public List<Book> getByDate(Date releaseDate){
+        return repository.findByReleaseDate(releaseDate);
     }
 }

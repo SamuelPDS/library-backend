@@ -24,14 +24,14 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @GetMapping("author/{author}")
-    public ResponseEntity<List<Book>> getByAuthor(@PathVariable String author) {
-        System.out.println(author);
-        if(bookService.getAuthor(author).isEmpty())
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        var bookByAuthos = bookService.getAuthor(author);
-        return ResponseEntity.ok().body(bookByAuthos);
-    }
+//    @GetMapping("author/{author}")
+//    public ResponseEntity<List<Book>> getByAuthor(@PathVariable String author) {
+//        System.out.println(author);
+//        if(bookService.getAuthor(author).isEmpty())
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        var bookByAuthos = bookService.getAuthor(author);
+//        return ResponseEntity.ok().body(bookByAuthos);
+//    }
 
     @GetMapping("genre/{genre}")
     public ResponseEntity<List<Book>> getByGenrer(@PathVariable String genre){

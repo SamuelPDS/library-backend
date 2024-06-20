@@ -8,16 +8,13 @@ import lombok.Setter;
 
 import java.util.Date;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class AuthorDTO {
-    private String name;
-    private Date bornData;
-
-    public AuthorDTO(Author author){
-    this.name = author.getName();
-    this.bornData = author.getBornData();
-    }
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+public record AuthorDTO(Long id, String name,Date bornData) {
+//    public AuthorDTO(Author author){
+//    this.name = author.getName();
+//    this.bornData = author.getBornData();
+//    }
 }

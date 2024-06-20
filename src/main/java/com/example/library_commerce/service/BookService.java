@@ -22,9 +22,9 @@ private BookRepository repository;
         this.repository.save(book);
     }
 
-    public List<Book> getAuthor(String author){
-        return this.repository.findByAuthor(author);
-    }
+//    public List<Book> getAuthor(String author){
+//        return this.repository.findByAuthor(author);
+//    }
 
     public List<Book> getGenre(String genre) {
         return this.repository.findByGenre(genre);

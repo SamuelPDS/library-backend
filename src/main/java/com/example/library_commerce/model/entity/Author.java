@@ -29,8 +29,8 @@ public class Author {
 //    private List<Book> books = new ArrayList<>();
 
     public Author(AuthorDTO authorDTO) {
-        this.name = authorDTO.getName();
-        this.bornData = authorDTO.getBornData();
+//        this.name = authorDTO.getName();
+//        this.bornData = authorDTO.getBornData();
     }
 
 //    public Author(Author author) {

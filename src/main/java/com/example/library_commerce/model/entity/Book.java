@@ -26,9 +26,9 @@ public class Book {
     @Column
     private double price;
 //    @ManyToOne
-//    @JoinColumn(name = "author")
-    @Column
-    private String author;
+//    @JoinColumn(name = "author_id", referencedColumnName = "id")
+//    private Author author;
+    private String authorName;
     @Column
     private Date releaseDate;
 
@@ -37,7 +37,8 @@ public class Book {
         this.genre = bookDTO.getGenre();
         this.price = bookDTO.getPrice();
         this.releaseDate = bookDTO.getReleaseDate();
-        this.author = bookDTO.getAuthor();
+        this.authorName = bookDTO.getAuthorName();
+//        this.author = author; future implements
     }
 }
 

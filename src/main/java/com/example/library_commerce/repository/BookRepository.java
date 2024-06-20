@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 @Transactional
 public interface BookRepository extends JpaRepository<Book, Long> {
-    List<Book> findByAuthor(String author);
+//    List<Book> findByAuthor(String author);
 
     List<Book> findByGenre(String genre);
 

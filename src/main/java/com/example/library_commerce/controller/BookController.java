@@ -33,6 +33,13 @@ public class BookController {
 //        return ResponseEntity.ok().body(bookByAuthos);
 //    }
 
+    @GetMapping
+    public ResponseEntity<List<Book>> getAllBooks(){
+        return  bookService.getAllBooks() != null ?
+                ResponseEntity.ok().body(bookService.getAllBooks()) :
+                ResponseEntity.badRequest().build();
+    }
+
     @GetMapping("genre/{genre}")
     public ResponseEntity<List<Book>> getByGenrer(@PathVariable String genre){
         if(bookService.getGenre(genre).isEmpty())

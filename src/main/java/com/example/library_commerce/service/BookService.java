@@ -33,4 +33,8 @@ private BookRepository repository;
     public List<Book> getByDate(Date releaseDate){
         return repository.findByReleaseDate(releaseDate);
     }
+
+    public List<Book> getAllBooks(){
+        return repository.findAll();
+    }
 }

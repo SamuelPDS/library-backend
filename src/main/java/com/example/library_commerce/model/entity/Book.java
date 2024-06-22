@@ -19,11 +19,14 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+
+    @Column(length = 100)
     private String title;
-    @Column
+
+    @Column(length = 64)
     private String genre;
-    @Column
+
+    @Column(length = 12)
     private double price;
 //    @ManyToOne
 //    @JoinColumn(name = "author_id", referencedColumnName = "id")

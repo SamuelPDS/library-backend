@@ -27,6 +27,8 @@ public class Author {
     private Date bornData;
 //    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
 //    private List<Book> books = new ArrayList<>();
+    @Column
+    private String author_resume;
 
     public Author(AuthorDTO authorDTO) {
 //        this.name = authorDTO.getName();

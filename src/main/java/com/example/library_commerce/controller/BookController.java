@@ -41,11 +41,11 @@ public class BookController {
     }
 
     @GetMapping("genre/{genre}")
-    public ResponseEntity<List<Book>> getByGenrer(@PathVariable String genre){
+    public ResponseEntity<List<Book>> getByGenre(@PathVariable String genre){
         if(bookService.getGenre(genre).isEmpty())
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        var booksByGenrer = bookService.getGenre(genre);
-        return ResponseEntity.ok().body(booksByGenrer);
+        var booksByGenre = bookService.getGenre(genre);
+        return ResponseEntity.ok().body(booksByGenre);
     }
 
     @GetMapping("release/{date}")

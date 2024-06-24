@@ -23,11 +23,16 @@ public class Book {
     @Column(length = 100)
     private String title;
 
+    @Column
+    private String synopsis;
+
     @Column(length = 64)
     private String genre;
 
     @Column(length = 12)
-    private double price;
+    private Double price;
+
+    //Criar relação
 //    @ManyToOne
 //    @JoinColumn(name = "author_id", referencedColumnName = "id")
 //    private Author author;
@@ -43,5 +48,7 @@ public class Book {
         this.authorName = bookDTO.getAuthorName();
 //        this.author = author; future implements
     }
+
+    //Relacionamento entre o book e bookRate;
 }
 

@@ -17,13 +17,13 @@ public class Client {
     private Long id;
     @Column(length = 11, unique = true)
     private String cpf;
-    @Column
+    @Column(length = 64)
     private String name;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "client")
     private Address address;
-    @Column
+    @Column(length = 32)
     private String email;
-    @Column
+    @Column(length = 14)
     private String phoneNumber;
 
 // public Client(CustomerDTO dto){

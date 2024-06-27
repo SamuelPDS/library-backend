@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/book")
@@ -41,7 +42,7 @@ public class BookController {
     }
 
     @GetMapping("genre/{genre}")
-    public ResponseEntity<List<Book>> getByGenre(@PathVariable String genre){
+    public ResponseEntity<Optional<List<Book>>> getByGenre(@PathVariable String genre){
         if(bookService.getGenre(genre).isEmpty())
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         var booksByGenre = bookService.getGenre(genre);

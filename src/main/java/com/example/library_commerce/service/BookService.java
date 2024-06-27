@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -25,7 +26,7 @@ private BookRepository repository;
 //        return this.repository.findByAuthor(author);
 //    }
 
-    public List<Book> getGenre(String genre) {
+    public Optional<List<Book>> getGenre(String genre) {
         return this.repository.findByGenre(genre);
     }
 

@@ -46,6 +46,7 @@ public class Book {
         this.price = bookDTO.getPrice();
         this.releaseDate = bookDTO.getReleaseDate();
         this.authorName = bookDTO.getAuthorName();
+        this.synopsis = bookDTO.getSynopsis();
 //        this.author = author; future implements
     }
 

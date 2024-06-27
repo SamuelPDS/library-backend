@@ -18,6 +18,7 @@ public class BookDTO {
     private Date releaseDate;
 //    private Author author;
     private String authorName;
+    private String synopsis;
 
     public BookDTO(Book book) {
         this.title = book.getTitle();

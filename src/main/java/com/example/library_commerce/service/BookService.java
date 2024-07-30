@@ -22,10 +22,6 @@ private BookRepository repository;
         this.repository.save(book);
     }
 
-//    public List<Book> getAuthor(String author){
-//        return this.repository.findByAuthor(author);
-//    }
-
     public Optional<List<Book>> getGenre(String genre) {
         return this.repository.findByGenre(genre);
     }
@@ -36,5 +32,14 @@ private BookRepository repository;
 
     public List<Book> getAllBooks(){
         return repository.findAll();
+    }
+
+    public Optional<Book> getById(Long id) {
+        return this.repository.findById(id);
+    }
+
+    public Book updateBook(Optional<Book> book, BookDTO dto) {
+        var newBook = new Book(dto);
+        return repository.save(newBook);
     }
 }

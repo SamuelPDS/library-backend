@@ -25,15 +25,6 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-//    @GetMapping("author/{author}")
-//    public ResponseEntity<List<Book>> getByAuthor(@PathVariable String author) {
-//        System.out.println(author);
-//        if(bookService.getAuthor(author).isEmpty())
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        var bookByAuthos = bookService.getAuthor(author);
-//        return ResponseEntity.ok().body(bookByAuthos);
-//    }
-
     @GetMapping
     public ResponseEntity<List<Book>> getAllBooks(){
         return  bookService.getAllBooks() != null ?
@@ -54,5 +45,13 @@ public class BookController {
         var booksByDate = bookService.getByDate(releaseDate);
         if(booksByDate.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return ResponseEntity.ok().body(booksByDate);
+    }
+
+    @PutMapping
+    public ResponseEntity<Book> editBook(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
+        var book = bookService.getById(id);
+        if (book.isEmpty()) return (ResponseEntity<Book>) ResponseEntity.status(HttpStatus.NOT_FOUND);
+
+        return (ResponseEntity<Book>) ResponseEntity.status(HttpStatus.OK);
     }
 }

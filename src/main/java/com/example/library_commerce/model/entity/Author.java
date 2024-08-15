@@ -31,8 +31,8 @@ public class Author {
     private String author_resume;
 
     public Author(AuthorDTO authorDTO) {
-//        this.name = authorDTO.getName();
-//        this.bornData = authorDTO.getBornData();
+////        this.name = authorDTO.getName();
+////        this.bornData = authorDTO.getBornData();
     }
 
 //    public Author(Author author) {

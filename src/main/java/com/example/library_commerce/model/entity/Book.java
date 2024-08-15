@@ -23,7 +23,6 @@ public class Book {
     @Column(length = 100)
     private String title;
 
-    @Column
     private String synopsis;
 
     @Column(length = 64)
@@ -31,6 +30,7 @@ public class Book {
 
     @Column(length = 12)
     private Double price;
+    
 
     //Criar relação
 //    @ManyToOne

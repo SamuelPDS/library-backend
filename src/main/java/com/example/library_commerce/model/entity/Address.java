@@ -15,22 +15,22 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
+    @Column(length = 10)
     private String cep;
-    @Column
+    @Column(length = 128)
     private String street;
-    @Column
+    @Column(length = 32)
     private Integer number;
-    @Column
+    @Column(length = 64)
     private String neighborhood;
-    @Column
+    @Column(length = 64)
     private String city;
-    @Column
+    @Column(length = 32)
     private String state;
-    @Column
+    @Column(length = 128)
     private String complement;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "cpf", referencedColumnName = "cpf")
     private Client client;
 }

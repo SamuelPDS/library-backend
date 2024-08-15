@@ -50,8 +50,8 @@ public class BookController {
     @PutMapping
     public ResponseEntity<Book> editBook(@PathVariable Long id, @RequestBody BookDTO bookDTO) {
         var book = bookService.getById(id);
-        if (book.isEmpty()) return (ResponseEntity<Book>) ResponseEntity.status(HttpStatus.NOT_FOUND);
+        if (book.isEmpty()) return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
-        return (ResponseEntity<Book>) ResponseEntity.status(HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 }

@@ -13,7 +13,7 @@ public class AuthorService {
 
     public Author createAuthor(AuthorDTO authorDTO) {
         System.out.println("Created");
-        var author = new Author(authorDTO);
+        var author =  new Author(authorDTO);
         return this.authorRepository.save(author);
     }
 }

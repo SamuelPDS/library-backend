@@ -8,8 +8,7 @@ API de livraria com metodos CRUD (Create, Read, Update e Delete) para simular um
 ## Instalação
 Para a instalação, basta ter um IDE de sua preferência, carregar as dependências do Spring, que no caso está sendo gerenciado pelo Maven, e aproveitar!
 
-![img.png](img.png) 
-## Funcionalidades
+
 
 ``` bash
 !!! documentação em desenvolvimento !!!

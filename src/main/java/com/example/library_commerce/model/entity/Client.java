@@ -1,5 +1,6 @@
 package com.example.library_commerce.model.entity;
 
+import com.example.library_commerce.model.dto.ClientDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,8 +27,12 @@ public class Client {
     @Column(length = 14)
     private String phoneNumber;
 
-// public Client(CustomerDTO dto){
-//    this.cpf = dto
-//}
+ public Client(ClientDTO dto){
+    this.cpf = dto.cpf();
+    this.name = dto.name();
+    this.address = dto.address();
+    this.email = dto.email();
+    this.phoneNumber = dto.phoneNumber();
+    }
 
 }

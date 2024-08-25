@@ -7,6 +7,7 @@ import com.example.library_commerce.model.entity.Book;
 import com.example.library_commerce.repository.AuthorRepository;
 import com.example.library_commerce.repository.BookRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -15,7 +16,8 @@ import java.util.Optional;
 
 @Service
 public class BookService {
-private BookRepository repository;
+    @Autowired
+    private BookRepository repository;
 
     public void createBook(BookDTO bookDTO){
         var book = new Book(bookDTO);

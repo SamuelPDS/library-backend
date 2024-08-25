@@ -1,5 +1,6 @@
 package com.example.library_commerce.model.entity;
 
+import com.example.library_commerce.model.dto.AddressDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,4 +34,15 @@ public class Address {
     @ManyToOne
     @JoinColumn(name = "cpf", referencedColumnName = "cpf")
     private Client client;
+
+    public Address(Client client, AddressDTO dto) {
+        this.client = client;
+        this.cep = dto.getCep();
+        this.street = dto.getStreet();
+        this.number = dto.getNumber();
+        this.neighborhood = dto.getNeighborhood();
+        this.city = getCep();
+        this.state = dto.getState();
+        this.complement = dto.getComplement();
+    }
 }

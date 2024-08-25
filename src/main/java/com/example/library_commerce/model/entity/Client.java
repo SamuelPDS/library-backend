@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,6 +28,7 @@ public class Client {
     private String email;
     @Column(length = 14)
     private String phoneNumber;
+//    private Date bornDate;
 
  public Client(ClientDTO dto){
     this.cpf = dto.cpf();
@@ -33,6 +36,7 @@ public class Client {
     this.address = dto.address();
     this.email = dto.email();
     this.phoneNumber = dto.phoneNumber();
+//     this.bornDate = dto.bornDate();
     }
 
 }

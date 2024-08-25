@@ -13,6 +13,7 @@ public class ClientService {
 
     public Client createCustomer(ClientDTO dto) {
         var newClient = new Client(dto);
+        newClient.getAddress().setClient(newClient);
         return repository.save(newClient);
     }
 }
